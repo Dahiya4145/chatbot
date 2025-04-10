@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            position: relative;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .chatbot-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff; /* Bootstrap primary color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px; /* Space between text and button */
+        }
+        .chatbot-button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="app">
+        <h1>Welcome to Our Service</h1>
+        <p>How can we assist you today?</p>
+        <button class="chatbot-button" id="chatbotButton">Chat with us</button>
+    </div>
+    
+    <script>
+        window.$zoho = window.$zoho || {};
+        $zoho.salesiq = $zoho.salesiq || { ready: function() {} };
+
+        // Function to open the chatbot
+        document.getElementById('chatbotButton').onclick = function() {
+            $zoho.salesiq.chat.start(); // This function may vary based on your chatbot's API
+        };
+    </script>
+    <script id="zsiqscript" src="https://salesiq.zohopublic.in/widget?wc=siq5b5d313b4e101a2952c8b968bc7dbb824142efcd9ef47c7314fa40a74bc7496a" defer></script>
+</body>
+</html>
